@@ -1,0 +1,11 @@
+     if ($('.working__content').size() > 0) {
+        var heightBlock = 0;
+        $('.working__content').each(function() {
+            if ($(this).height() > heightBlock) {
+                heightBlock = $(this).height();
+            }
+        });
+        $('.working__content').each(function() {
+            $(this).height(heightBlock);
+        });
+    }
