@@ -1,4 +1,4 @@
 # jquery-features
-javascript and jquery features
+  jquery and javascript features
 
-Here I collect a javascript and jquery features
+There are a javascript and jquery features
