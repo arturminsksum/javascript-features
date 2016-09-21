@@ -1,0 +1,26 @@
+        function tabsNav(dir) {
+            var tab = $('.tabs__btn');
+            var tabContent = $('.tabs__item');
+            var tabsPos = $('.tabs__btn.active').index();
+            tabsPos += dir;
+
+            if (tabsPos < 0) {
+                tabsPos = $('.tabs__btn').length - 1;
+            } else if (tabsPos > $('.tabs__btn').length - 1) {
+                tabsPos = 0;
+            }
+
+            $('.tabs__btn.active').removeClass('active');
+            $('.tabs__btn').eq(tabsPos).addClass('active');
+            $('.tabs__item').fadeOut('');
+            $('.tabs__item').eq(tabsPos).fadeIn('');
+
+        }
+
+        $('.tabs__arrow.next').on('click', function() {
+            tabsNav(1);
+        });
+
+        $('.tabs__arrow.prev').on('click', function() {
+            tabsNav(-1);
+        });
