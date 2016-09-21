@@ -1,0 +1,7 @@
+https://github.com/ChrisWojcik/single-page-nav
+
+        $('.about-menu__list').singlePageNav({
+            currentClass: 'active',
+            updateHash: true,
+            offset: $('.about-menu').height()
+        });
