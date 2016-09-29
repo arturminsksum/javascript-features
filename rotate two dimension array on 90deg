@@ -1,7 +1,7 @@
-var object = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-object.width = 3;
-object.height = 4;
+arr.width = 3;
+arr.height = 4;
 
 function createArray(object) {
 
@@ -16,7 +16,32 @@ function createArray(object) {
             counter++;
         }
     }
+
+
     return area;
 }
 
-var area = createArray(object1);
+var newArr = createArray(arr);
+
+console.log(newArr)
+
+function rotateArray(arr) {
+    var width = arr[0].length;
+    var height = arr.length;
+  
+    var copy = new Array(width);
+  
+  for (var n = 0; n < copy.length; n++)
+    copy[n] = new Array(height); 
+  
+    for (var i = 0; i < height; i++) {
+        for (var j = 0; j < width; j++) {
+            copy[j][height - i - 1] = arr[i][j];
+        }
+    }
+
+    return copy;
+}
+
+var rotArr = rotateArray(newArr);
+console.log(rotArr)
