@@ -1,0 +1,22 @@
+var object = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+object.width = 3;
+object.height = 4;
+
+function createArray(object) {
+
+    var area = new Array(object.height);
+    for (var i = 0; i < area.length; i++)
+        area[i] = new Array(object.width);
+    var counter = 0;
+    for (var j = 0; j < object.height; j++) {
+        for (var n = 0; n < object.width; n++) {
+
+            area[j][n] = object[counter];
+            counter++;
+        }
+    }
+    return area;
+}
+
+var area = createArray(object1);
