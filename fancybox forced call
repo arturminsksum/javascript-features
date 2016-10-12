@@ -1,0 +1,3 @@
+  $.fancybox.open({
+      href: '#add'
+  });
