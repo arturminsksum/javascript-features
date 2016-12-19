@@ -14,14 +14,15 @@ function toHHMMSS(sec) {
 var timer = document.querySelectorAll('.timer');
 
 function countDown() {
-  var i = 900;
+  var count = 900;
   var timerId = setInterval(function() {
 
-    timer.forEach(function(item) {
-      item.innerHTML = toHHMMSS(i);
-    });
-    if (i == 0) clearInterval(timerId);
-    i--;
+    for (var i = 0; i < timer.length; i++) {
+        timer[i].innerHTML = toHHMMSS(count);
+    }
+
+    if (count == 0) clearInterval(timerId);
+    count--;
   }, 1000);
 }
 
