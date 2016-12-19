@@ -1,4 +1,4 @@
-function toHHMMSS (sec) {
+function toHHMMSS(sec) {
     var sec_num = sec; 
     var hours   = Math.floor(sec_num / 3600);
     var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
@@ -11,12 +11,15 @@ function toHHMMSS (sec) {
 }
 
 
-var timer = document.getElementById('timer');
+var timer = document.querySelectorAll('.timer');
 
 function countDown() {
   var i = 900;
   var timerId = setInterval(function() {
-    timer.innerHTML = toHHMMSS (i);
+
+    timer.forEach(function(item) {
+      item.innerHTML = toHHMMSS(i);
+    });
     if (i == 0) clearInterval(timerId);
     i--;
   }, 1000);
