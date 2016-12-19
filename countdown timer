@@ -1,0 +1,12 @@
+var timer = document.getElementById('timer');
+
+function countDown() {
+  var i = 900;
+  var timerId = setInterval(function() {
+    timer.innerHTML = i;
+    if (i == 0) clearInterval(timerId);
+    i--;
+  }, 1000);
+}
+
+countDown();
